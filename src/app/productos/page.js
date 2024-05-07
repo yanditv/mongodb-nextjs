@@ -22,7 +22,7 @@ export default function Productos() {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((producto) => {
+                        {data && data.map((producto) => {
                             return (
                                 <tr>
                                     <td>{producto.bar_code}</td>

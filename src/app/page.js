@@ -4,15 +4,10 @@ import { useEffect, useState } from 'react';
 export default function Home() {
   return (
     <>
-      {data.map((producto)=>{
-        return (
-          <>
-            <di className="flex justify-center p-10">
-              <p className='text-red-700 '>{producto.nombre}</p>
-            </di>
-          </>
-        );
-      })}
+      <div>
+        <h1 className="text-4xl text-center">INICIO</h1>
+        <a href="/productos" className="inline-flex rounded-md bg-blue-400 py-2 px-3">Productos</a>
+      </div>
     </>
   )
 }
