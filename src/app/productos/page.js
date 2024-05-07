@@ -24,7 +24,7 @@ export default function Productos() {
                     <tbody>
                         {data && data.map((producto) => {
                             return (
-                                <tr>
+                                <tr key={producto._id}>
                                     <td>{producto.bar_code}</td>
                                     <td>{producto.nombre}</td>
                                     <td>{producto.precio}</td>
