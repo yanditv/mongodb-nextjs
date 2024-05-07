@@ -25,11 +25,25 @@ export async function POST(NextRequest) {
     return NextResponse.error(error );
   }
 }
+
 export async function PUT(NextRequest) {
   try{
     const datos = await NextRequest.json();
     const connection = await db();
     const returndata = await connection.collection("productos").updateOne({nombre:datos.nombre},{$set:{precio:datos.precio}});
+    return NextResponse.json(returndata);
+
+  }catch(error){
+    console.error(error);
+    return NextResponse.error(error );
+  }
+}
+
+export async function DELETE(NextRequest) {
+  try{
+    const datos = await NextRequest.json();
+    const connection = await db();
+    const returndata = await connection.collection("productos").deleteOne({nombre:datos.nombre});
     return NextResponse.json(returndata);
 
   }catch(error){
